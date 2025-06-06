@@ -1,1 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+:root {
+  --primary: rgb(0, 0, 0);
+  --primary80: rgba(0, 0, 0, 0.8);
+  --primary60: rgba(0, 0, 0, 0.6);
+  --primary10: rgba(0, 0, 0, 0.1);
+  --primary5: rgba(0, 0, 0, 0.05);
+
+  --secondary: rgb(255, 255, 255);
+  --secondary80: rgba(255, 255, 255, 0.8);
+  --secondary60: rgba(255, 255, 255, 0.6);
+  --secondary10: rgba(255, 255, 255, 0.1);
+  --secondary5: rgba(255, 255, 255, 0.05);
+
+  --green80: rgba(55, 210, 47, 0.8);
+  --green25: rgba(55, 210, 47, 0.25);
+  --green10: rgba(55, 210, 47, 0.1);
+}
+
+body{
+  background: var(--primary);
+}
+
+main{
+  position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 100px;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+  max-width: 680px;
+  padding: 16px;
+  animation: reveal .5s linear;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--primary80);
+  backdrop-filter: blur(20px);
+}
+
+/*links*/
+#cv{
+  background: var(--green25);
+  border-color: var(--green10);
+  text-decoration: none;
+}
+
+div a {
+  height: 35px;
+  width: 35px;
+  background: var(--secondary10);
+  border: 1px solid var(--secondary5);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+div > a > svg, #cv > p {
+  stroke: var(--secondary60);
+  transition: .3s ease-in-out;
+  color: var(--secondary60);
+}
+
+div > a:hover > svg, #cv:hover > p {
+  stroke: var(--secondary);
+  color: var(--secondary);
+}
+
+/* WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Per Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+/* Per IE e Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+@keyframes reveal {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

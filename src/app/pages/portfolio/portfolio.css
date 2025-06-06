@@ -1,0 +1,125 @@
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text svg{
+  transform: translateY(60%);
+  z-index: -1;
+}
+
+.text svg > path{
+  fill: #101010;
+  width: 100%;
+}
+
+.text p {
+  font-weight: 300;
+  color: var(--secondary10);
+  transform: translateY(20px);
+  transition: .3s ease-in-out;
+}
+
+.text p:hover {
+  color: var(--secondary80);
+}
+
+.text p.reveal {
+  color: var(--secondary60);
+  transform: translateY(0);
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.projects:has(.project:hover) .project:not(:hover){
+  filter: opacity(.5);
+}
+
+.project {
+  position: relative;
+  display: flex;
+  transition: .3s ease-in-out;
+}
+
+img{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.actions{
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions > p, span {
+  padding: 8px;
+  background: var(--secondary10);
+  border: 1px solid var(--secondary5);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  display: flex;
+  color: var(--secondary);
+}
+
+span {
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+span > svg{
+  stroke: var(--secondary80);
+  transition: .3s ease-in-out;
+}
+
+span:hover > svg{
+  stroke: var(--secondary);
+  animation: open .5s linear;
+}
+
+.lottie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.lottie {
+  color: var(--secondary60);
+}
+
+@media (max-width: 500px) {
+  p{
+    font-size: 14px;
+  }
+}
+
+@keyframes open {
+  0%{
+    transform: translate(0) rotate(0);
+  }
+  25%{
+    transform: rotate(-8deg);
+  }
+  50%{
+    transform: translate(3px, -3px);
+  }
+  75%{
+    transform: rotate(8deg);
+  }
+  100%{
+    transform: translate(0) rotate(0);
+  }
+}

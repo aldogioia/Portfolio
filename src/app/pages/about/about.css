@@ -1,0 +1,62 @@
+.personal-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: var(--secondary);
+}
+
+.personal-info > div{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+img{
+  width: 80px;
+  border-radius: 32px;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text svg{
+  transform: translateY(60%);
+  z-index: -1;
+}
+
+.text svg > path{
+  fill: #101010;
+  width: 100%;
+}
+
+.text p {
+  font-weight: 300;
+  color: var(--secondary10);
+  transform: translateY(20px);
+  transition: .3s ease-in-out;
+}
+
+.text p:hover {
+  color: var(--secondary80);
+}
+
+.text p.reveal {
+  color: var(--secondary60);
+  transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+  .personal-info > div{
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .text > p{
+    font-size: 14px;
+  }
+}
