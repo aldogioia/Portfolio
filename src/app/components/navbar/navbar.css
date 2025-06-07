@@ -17,7 +17,7 @@ h3 > span {
 
 @media (max-width: 500px){
   header{
-    justify-content: left;
+    justify-content: center;
   }
   .links{
     display: none;

@@ -10,7 +10,7 @@
 }
 
 .text svg > path{
-  fill: #101010;
+  fill: var(--svg);
   width: 100%;
 }
 
