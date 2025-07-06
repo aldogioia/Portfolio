@@ -21,7 +21,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 546px) {
+@media (max-width: 576px) {
   footer {
     padding: 3rem 1rem;
     text-align: left;

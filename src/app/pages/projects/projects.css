@@ -41,7 +41,11 @@
   aspect-ratio: 2 / 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
+  .projects h2 {
+    font-size: 3rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     overflow-x: hidden;

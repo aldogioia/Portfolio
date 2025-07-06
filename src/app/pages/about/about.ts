@@ -8,9 +8,11 @@ import { AfterViewInit, Component, ElementRef } from '@angular/core';
   host: {"class": "main"}
 })
 export class About implements AfterViewInit{
-  initialSize: number = 6;
+  initialSize: number;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+    this.initialSize = window.innerWidth <= 576 ? 3.8 : 7;
+  }
 
   ngAfterViewInit(): void {
     const h1 = this.el.nativeElement.querySelector('h1');

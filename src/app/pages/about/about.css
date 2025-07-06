@@ -44,8 +44,14 @@
   text-decoration-style: wavy;
 }
 
-@media (max-width: 546px) {
+@media (max-width: 576px) {
+  .links a {
+    font-size: 1.65rem;
+  }
+  .about h2 {
+    font-size: 3rem;
+  }
   .about p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
