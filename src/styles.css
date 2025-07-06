@@ -1,14 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,100,1;1,9..144,100..900,100,1&display=swap');
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Fraunces", serif;
   font-optical-sizing: auto;
-  font-style: normal;
+  font-weight: 300;
+  font-variation-settings:
+    "SOFT" 100,
+    "WONK" 1;
 }
 
 router-outlet{
@@ -16,90 +19,70 @@ router-outlet{
 }
 
 :root {
-  --primary: rgb(24, 24, 24);
-  --primary80: rgba(24, 24, 24, 0.8);
-  --primary60: rgba(24, 24, 24, 0.6);
-  --primary10: rgba(24, 24, 24, 0.1);
-  --primary5: rgba(24, 24, 24, 0.05);
-
-  --secondary: rgb(255, 255, 255);
-  --secondary80: rgba(255, 255, 255, 0.8);
-  --secondary60: rgba(255, 255, 255, 0.6);
-  --secondary10: rgba(255, 255, 255, 0.1);
-  --secondary5: rgba(255, 255, 255, 0.05);
-
-  --svg: rgb(40, 40, 40);
-
-  --green80: rgba(55, 210, 47, 0.8);
-  --green25: rgba(55, 210, 47, 0.25);
-  --green10: rgba(55, 210, 47, 0.1);
+  --white: #f8f8ff;
+  --black: #0B1B25;
+  --black60: #0B1B2599;
+  --gray: #e8e8ef;
+  --primary: #12DF8FFF;
 }
 
 body{
-  background: var(--primary);
+  background: var(--white);
+  overscroll-behavior: none;
 }
 
 main{
-  position: relative;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding-bottom: 100px;
+  gap: 1rem;
 }
 
-.main{
+.main {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  align-items: center;
   width: 100%;
-  max-width: 680px;
-  padding: 16px;
-  animation: reveal .5s linear;
+  max-width: 800px;
+  min-height: 100vh;
+  gap: 3rem;
+  padding: 1rem;
+  animation: 1s reveal ease-in-out;
 }
 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+h1 {
   position: sticky;
   top: 0;
-  z-index: 20;
-  background: var(--primary80);
-  backdrop-filter: blur(20px);
-}
-
-/*links*/
-#cv{
-  background: var(--green25);
-  border-color: var(--green10);
-  text-decoration: none;
-}
-
-div a {
-  height: 35px;
-  width: 35px;
-  background: var(--secondary10);
-  border: 1px solid var(--secondary5);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 1rem;
+  font-size: 6rem;
+  margin-top: calc(150px - 1rem);
+  line-height: 1;
+  text-align: center;
+  color: var(--black);
   cursor: pointer;
+  z-index: 99;
+  transition: font-style .3s ease-in-out;
+  background: linear-gradient(to bottom, var(--white) 50%, transparent);
 }
 
-div > a > svg, #cv > p {
-  stroke: var(--secondary60);
+h1:hover {
+  font-style: italic;
+}
+
+.btn-navigation {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: right;
+  color: var(--black);
+  font-size: 3rem;
+  cursor: pointer;
   transition: .3s ease-in-out;
-  color: var(--secondary60);
 }
 
-div > a:hover > svg, #cv:hover > p {
-  stroke: var(--secondary);
-  color: var(--secondary);
+.btn-navigation:hover {
+  font-style: italic;
 }
 
 /* WebKit browsers (Chrome, Safari) */
@@ -125,5 +108,11 @@ body {
   }
   to{
     opacity: 1;
+  }
+}
+
+@media (max-width: 546px) {
+  .links a {
+    font-size: 1.8rem;
   }
 }

@@ -1,9 +1,11 @@
 <main>
-  <app-navbar></app-navbar>
   <router-outlet></router-outlet>
-  <app-links class="links"></app-links>
-  <div class="floating-nav">
-    <p routerLink="/about" routerLinkActive="active-link"><span>&#123;</span>about me<span>&#125;</span></p>
-    <p routerLink="/portfolio" routerLinkActive="active-link"><span>&#123;</span>portfolio<span>&#125;</span></p>
-  </div>
 </main>
+<footer>
+  <ng-lottie
+    [options]="lottieOptions"
+    [styles]="{ width: '200px',height: '200px' }">
+  </ng-lottie>
+
+  <p>Developed by <a href="https://www.aldogioia.com">Aldo</a>🧑🏻‍💻.</p>
+</footer>

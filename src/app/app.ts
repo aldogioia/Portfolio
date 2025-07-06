@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AnimationOptions} from 'ngx-lottie';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'portfolio';
+  protected title = 'Aldo Gioia';
+
+  lottieOptions: AnimationOptions = {
+    path: 'lottie_files/coding.json',
+    loop: true,
+    autoplay: true,
+  };
 }

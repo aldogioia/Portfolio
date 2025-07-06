@@ -8,24 +8,22 @@ import { AfterViewInit, Component, ElementRef } from '@angular/core';
   host: {"class": "main"}
 })
 export class About implements AfterViewInit{
+  initialSize: number = 6;
 
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
-    const paragraphs = this.el.nativeElement.querySelectorAll('.text p');
+    const h1 = this.el.nativeElement.querySelector('h1');
+    const minSize = 2.5;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal');
-          // Optional: stop observing after first reveal
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.8,
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const maxScroll = 150;
+      const clampedScroll = Math.min(scrollY, maxScroll);
+      const scale = 1 - (clampedScroll / maxScroll);
+      const fontSize = minSize + (this.initialSize - minSize) * scale;
+
+      h1.style.fontSize = `${fontSize}rem`;
     });
-
-    paragraphs.forEach((p: HTMLElement) => observer.observe(p));
   }
 }
