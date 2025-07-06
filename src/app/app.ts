@@ -8,8 +8,7 @@ import {AnimationOptions} from 'ngx-lottie';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'Aldo Gioia';
-
+  protected title = 'portfolio';
   lottieOptions: AnimationOptions = {
     path: 'lottie_files/coding.json',
     loop: true,
