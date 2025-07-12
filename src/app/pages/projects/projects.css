@@ -14,7 +14,7 @@
   font-weight: 200;
   font-size: 1.5rem;
   line-height: 1.6;
-  max-width: 80ch;
+  max-width: 65ch;
   color: var(--black60);
 }
 
@@ -24,24 +24,78 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-flow: row dense;
   gap: .5rem;
 }
 
 .grid-item {
-  aspect-ratio: 1 / 1;
-  background-color: var(--gray);
+  position: relative;
   width: 100%;
-  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--gray);
+  border-radius: .8rem;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: pointer;
 }
 
-.grid-item.rect {
-  grid-column: span 2;
-  aspect-ratio: 2 / 1;
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: .5rem .5rem .5rem 1rem;
 }
 
-@media (max-width: 576px) {
+.details h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--black60);
+}
+
+.details a {
+  color: var(--black);
+  padding: .5rem;
+  transition: .3s ease-in-out;
+  border-radius: 1rem;
+}
+
+.details a svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  transition: .2s ease-in-out;
+  stroke: var(--black);
+}
+
+.grid-item:hover > .details a {
+  background: var(--white60);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+  position: absolute;
+  bottom: -10%;
+  width: calc(100% - 3rem);
+  aspect-ratio: 16/9;
+  object-position: top;
+  border-radius: .3rem;
+  transition: .2s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:hover img {
+  scale: 1.05;
+}
+
+@media (max-width: 834px) {
   .projects h2 {
     font-size: 3rem;
   }
@@ -53,7 +107,7 @@
 
   .grid-item.rect {
     grid-column: span 1;
-    aspect-ratio: 1.5 / 1; /* o 1 / 1 se vuoi uniforme */
+    aspect-ratio: 1.5 / 1;
   }
 }
 

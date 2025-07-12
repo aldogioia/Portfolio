@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
+import {Project} from '../../model/Project';
 
 @Component({
   selector: 'app-projects',
@@ -7,25 +8,13 @@ import {AfterViewInit, Component, ElementRef} from '@angular/core';
   styleUrl: './projects.css',
   host: {class: 'main'},
 })
-export class Projects implements AfterViewInit {
-  initialSize: number = 7;
+export class Projects {
+  projects: Project[] = [
+    new Project("images/museoMultimedialeCosenza.png", "Museo Multimediale Cosenza", "https://museomultimedialecosenza.it", "July 2025"),
+    new Project("images/tesi.png", "Bachelor's thesis", "https://github.com/aldogioia/Tesi", "April 2025"),
+  ];
 
-  constructor(private el: ElementRef) {
-    this.initialSize = window.innerWidth <= 576 ? 3.8 : 7;
-  }
-
-  ngAfterViewInit(): void {
-    const h1 = this.el.nativeElement.querySelector('h1');
-    const minSize = 2.5;
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const maxScroll = 150;
-      const clampedScroll = Math.min(scrollY, maxScroll);
-      const scale = 1 - (clampedScroll / maxScroll);
-      const fontSize = minSize + (this.initialSize - minSize) * scale;
-
-      h1.style.fontSize = `${fontSize}rem`;
-    });
+  goToExternal(link: string): void {
+    window.open(link, '_blank');
   }
 }

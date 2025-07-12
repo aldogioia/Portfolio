@@ -13,11 +13,11 @@
   font-weight: 200;
   font-size: 2rem;
   line-height: 1.6;
-  max-width: 80ch;
+  max-width: 65ch;
   color: var(--black60);
 }
 
-.about p > b {
+.about p > b, .about p > b > a {
   color: var(--black);
 }
 
@@ -30,15 +30,13 @@
 
 .links a {
   color: var(--black60);
-  text-decoration: none;
   font-size: 2.5rem;
   cursor: alias;
   transition: color 0.3s ease;
 }
 
-.links a:hover {
+.links a:hover, .about p > b > a:hover {
   color: var(--primary);
-  text-decoration-line: underline;
   text-decoration-skip-ink: all;
   text-underline-offset: 4px;
   text-decoration-style: wavy;

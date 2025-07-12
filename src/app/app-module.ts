@@ -7,6 +7,7 @@ import { About } from './pages/about/about';
 
 import {LottieComponent, provideLottieOptions} from 'ngx-lottie';
 import { Projects } from './pages/projects/projects';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { Projects } from './pages/projects/projects';
     About,
     Projects,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    LottieComponent
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        LottieComponent,
+        NgOptimizedImage
+    ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideLottieOptions({

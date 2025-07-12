@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,100,1;1,9..144,100..900,100,1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,100,1;1,9..144,100..900,100,1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
   margin: 0;
@@ -20,9 +20,10 @@ router-outlet{
 
 :root {
   --white: #f8f8ff;
+  --white60: #f8f8ff99;
   --black: #0B1B25;
   --black60: #0B1B2599;
-  --gray: #e8e8ef;
+  --gray: #f1f1f7;
   --primary: #12DF8FFF;
 }
 
@@ -44,7 +45,7 @@ main{
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   min-height: 100vh;
   gap: 3rem;
   padding: 1rem;
