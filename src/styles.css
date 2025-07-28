@@ -52,22 +52,12 @@ main{
   animation: 1s reveal ease-in-out;
 }
 
-h1 {
-  position: sticky;
-  top: 0;
-  padding-top: 1rem;
-  margin-top: calc(150px - 1rem);
-  line-height: 1;
-  text-align: center;
-  color: var(--black);
-  cursor: pointer;
-  z-index: 99;
-  transition: font-style .3s ease-in-out;
-  background: linear-gradient(to bottom, var(--white) 50%, transparent);
-}
-
-h1:hover {
-  font-style: italic;
+nav[aria-label] {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .btn-navigation {
@@ -93,8 +83,6 @@ h1:hover {
 
 /* Per Firefox */
 * {
-  scrollbar-width: none;
-  scrollbar-color: transparent transparent;
 }
 
 /* Per IE e Edge */

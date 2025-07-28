@@ -1,5 +1,6 @@
-import {Component, ElementRef} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import {AnimationOptions} from 'ngx-lottie';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {AnimationOptions} from 'ngx-lottie';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit, AfterViewInit{
   protected title = 'portfolio';
 
   lottieOptions: AnimationOptions = {
@@ -18,8 +19,35 @@ export class App {
 
   initialSize: number = 7;
 
-  constructor(private el: ElementRef) {
+  constructor(
+    private el: ElementRef,
+    private titleService: Title,
+    private metaService: Meta
+  ) {
     this.initialSize = window.innerWidth <= 576 ? 3.8 : 7;
+  }
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Aldo Gioia – Full Stack Developer | Portfolio');
+    this.metaService.addTags([
+      { name: 'description', content: 'Hi! I’m Aldo Gioia, a full stack developer passionate about frontend and backend for web, desktop, and mobile applications.' },
+      { name: 'keywords', content: 'Aldo Gioia, portfolio, full stack developer, frontend, backend, web developer, mobile apps, desktop software, TypeScript, Angular, Flutter, Java, Computer Science' },
+      { name: 'author', content: 'Aldo Gioia' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'language', content: 'en' },
+      { name: 'theme-color', content: '#12DF8F' },
+
+      // Open Graph
+      { property: 'og:title', content: 'Aldo Gioia – Full Stack Developer' },
+      { property: 'og:description', content: 'Full stack developer for web, mobile, and desktop platforms.' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://www.aldogioia.com' },
+
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Aldo Gioia – Full Stack Developer' },
+      { name: 'twitter:description', content: 'Passionate developer across web, mobile, and desktop.' },
+    ]);
   }
 
   ngAfterViewInit(): void {
