@@ -35,7 +35,6 @@ export class App implements OnInit, AfterViewInit{
       { name: 'author', content: 'Aldo Gioia' },
       { name: 'robots', content: 'index, follow' },
       { name: 'language', content: 'en' },
-      { name: 'theme-color', content: '#12DF8F' },
 
       // Open Graph
       { property: 'og:title', content: 'Aldo Gioia – Full Stack Developer' },

@@ -20,7 +20,6 @@ export class About implements OnInit {
       { name: 'author', content: 'Aldo Gioia' },
       { name: 'robots', content: 'index, follow' },
       { name: 'language', content: 'en' },
-      { name: 'theme-color', content: '#12DF8F' },
 
       // Open Graph
       { property: 'og:title', content: 'About – Aldo Gioia' },
