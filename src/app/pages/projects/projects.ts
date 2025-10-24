@@ -11,9 +11,10 @@ import {Meta, Title} from '@angular/platform-browser';
 })
 export class Projects implements OnInit {
   projects: Project[] = [
-    new Project("images/museoMultimedialeCosenza.png", "Museo Multimediale Cosenza", "https://museomultimedialecosenza.it", "July 2025"),
-    new Project("images/tesi.png", "Bachelor's thesis", "https://github.com/aldogioia/Tesi", "April 2025"),
-    new Project("images/security_template_uml.png", "Security Template", "https://github.com/aldogioia/SecurityTemplate", "August 2025"),
+    new Project("images/calabriaparchi.jpeg", "Calabria Parchi", "https://www.calabriaparchi.it", "October 2025"),
+    new Project("images/security_template_uml.jpeg", "Security Template", "https://github.com/aldogioia/SecurityTemplate", "August 2025"),
+    new Project("images/museo_multimediale_cosenza.jpeg", "Museo Multimediale Cosenza", "https://museomultimedialecosenza.it", "July 2025"),
+    new Project("images/tesi.jpeg", "Bachelor's thesis", "https://github.com/aldogioia/Tesi", "April 2025"),
   ];
 
   constructor(private titleService: Title, private metaService: Meta) {}

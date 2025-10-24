@@ -4,7 +4,7 @@ import {About} from './pages/about/about';
 import {Projects} from './pages/projects/projects';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/about', pathMatch: 'full'},
+  {path: '', redirectTo: '/projects', pathMatch: 'full'},
   { path: 'about',  component: About },
   { path: 'projects',  component: Projects },
 ];
